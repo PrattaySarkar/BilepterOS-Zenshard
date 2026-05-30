@@ -1,18 +1,42 @@
 # BilepterOS: Project Zenshard
 https://sites.google.com/view/bilepterosvzenshard/home
 
-## `.iso` Guide:
+---
 
-| CPU Architecture / Family | Targets | ISO File |
-| :--- | :--- | :--- |
-| **Intel & AMD (64-bit)** | Core i3/i5/i7/i9, Core 2 Duo, Ryzen, EPYC, Athlon 64 | `zenshard-release-x64.iso` |
-| **Intel & AMD (Legacy 32-bit)** | Pentium (with TSC), early Pentium 4, AMD K6-2 / K6-3 | `zenshard-release-x32.iso` |
-| **Broadcom / Raspberry Pi** | Zero W, Zero 2W, Pi 3, Pi 4, Pi 5 (BCM2837, BCM2711, BCM2712) | `zenshard-release-buildrt.iso` |
-| **Allwinner** | V-Series (V100), A-Series, H-Series, D-Series (RISC-V) | `zenshard-release-armbm.iso` |
-| **Olimex** | OLinuXino Boards (A20, etc.) | `zenshard-release-armbm.iso` |
-| **NXP** | i.MX Series (i.MX6, i.MX8, i.MX9) | `zenshard-release-armbm.iso` *or* `zenshard-release-buildrt.iso` |
-| **Texas Instruments** | Sitara Series (AM335x / AM6x) | `zenshard-release-buildrt.iso` |
-| **STMicroelectronics** | STM32MP1 / STM32MP2 | `zenshard-release-buildrt.iso` |
+## Zenshard `.iso` Guide
+
+### 1. Unified Intel & AMD Platforms (Live ISOs)
+
+| CPU Family | Target Processor | Base Tool | Target Architecture Format | Target Build Configuration Output File |
+| :--- | :--- | :--- | :--- | :--- |
+| **Intel & AMD (64-bit)** | Core / Ryzen / Xeon / EPYC / Athlon 64 | Cubic (Debian) | `x64` | `zenshard-release-x64-generic.iso` |
+| **Intel & AMD (32-bit)** | Pentium (TSC) / AMD K6-2 & K6-3 | Cubic (Debian 32) | `x32` | `zenshard-release-x32-legacy.iso` |
+
+### 2. Broadcom / Raspberry Pi Platforms (Flashable Storage Images)
+
+| CPU Family | Target Processor | Base Tool | Target Architecture Format | Target Build Configuration Output File |
+| :--- | :--- | :--- | :--- | :--- |
+| **Broadcom** | Raspberry Pi Zero W (BCM2835) | Buildroot / rpi-bld | `armv6el` | `zenshard-release-armv6el-pizerow.img` |
+| **Broadcom** | Raspberry Pi Zero 2W / Pi 3 (BCM2837) | Buildroot / rpi-bld | `aarch64` | `zenshard-release-aarch64-pi3ubl.img` |
+| **Broadcom** | Raspberry Pi 4 (BCM2711) | Buildroot / rpi-bld | `aarch64` | `zenshard-release-aarch64-pi4.img` |
+| **Broadcom** | Raspberry Pi 5 (BCM2712) | Buildroot / rpi-bld | `aarch64` | `zenshard-release-aarch64-pi5.img` |
+
+### 3. Allwinner & Olimex Platforms (Flashable Storage Images)
+
+| CPU Family | Target Processor / Board | Base Tool | Target Architecture Format | Target Build Configuration Output File |
+| :--- | :--- | :--- | :--- | :--- |
+| **Allwinner** | V-Series (V100 IP Camera SoC) | Armbian Framework | `armv7hf` | `zenshard-release-armv7hf-allwinnerv100.img` |
+| **Allwinner** | A-Series / H-Series Mainstream (e.g., H616) | Armbian Framework | `aarch64` | `zenshard-release-aarch64-allwinnergen8.img` |
+| **Allwinner** | D-Series (D1 Single-Core SoC) | Armbian / Buildroot | `riscv64` | `zenshard-release-riscv64-allwinnerd1.img` |
+| **Olimex** | OLinuXino Boards (Allwinner A20 Dual-Core) | Armbian Framework | `armv7hf` | `zenshard-release-armv7hf-olinuxinoa20.img` |
+
+---
+
+## Future Targets
+
+##### 4. NXP i.MX Series
+##### 5. Texas Instruments Sitara Series
+##### 6. STMicroelectronics Series
 
 ---
 
